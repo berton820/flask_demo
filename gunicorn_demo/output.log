@@ -1,0 +1,144 @@
+gunicorn.py:12: MonkeyPatchWarning: Monkey-patching ssl after ssl has already been imported may lead to errors, including RecursionError on Python 3.6. Please monkey-patch earlier. See https://github.com/gevent/gevent/issues/1016
+  gevent.monkey.patch_all()
+[2018-07-31 16:22:17 +0800] [16319] [DEBUG] Current configuration:
+  config: gunicorn.py
+  bind: ['0.0.0.0:16384']
+  backlog: 2048
+  workers: 1
+  worker_class: gunicorn.workers.ggevent.GeventWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/berton/Desktop/360/project/gunicorn_demo
+  daemon: False
+  raw_env: []
+  pidfile: log/gunicorn.pid
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: ADD_Services:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x1050a5378>
+  on_reload: <function OnReload.on_reload at 0x1050a5488>
+  when_ready: <function WhenReady.when_ready at 0x1050a5598>
+  pre_fork: <function Prefork.pre_fork at 0x1050a56a8>
+  post_fork: <function Postfork.post_fork at 0x1050a57b8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x1050a58c8>
+  worker_int: <function WorkerInt.worker_int at 0x1050a59d8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x1050a5ae8>
+  pre_exec: <function PreExec.pre_exec at 0x1050a5bf8>
+  pre_request: <function PreRequest.pre_request at 0x1050a5d08>
+  post_request: <function PostRequest.post_request at 0x1050a5d90>
+  child_exit: <function ChildExit.child_exit at 0x1050a5ea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x1050bf048>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x1050bf158>
+  on_exit: <function OnExit.on_exit at 0x1050bf268>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2018-07-31 16:22:17 +0800] [16319] [INFO] Starting gunicorn 19.9.0
+[2018-07-31 16:22:17 +0800] [16319] [DEBUG] Arbiter booted
+[2018-07-31 16:22:17 +0800] [16319] [INFO] Listening at: http://0.0.0.0:16384 (16319)
+[2018-07-31 16:22:17 +0800] [16319] [INFO] Using worker: gunicorn.workers.ggevent.GeventWorker
+[2018-07-31 16:22:17 +0800] [16324] [INFO] Booting worker with pid: 16324
+[2018-07-31 16:22:17 +0800] [16319] [DEBUG] 1 workers
+[2018-07-31 16:25:24 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:25:24 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:26:49 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:26:49 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:26:58 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:26:58 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:27:04 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:27:04 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:27:18 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:27:18 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:27:29 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:27:29 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:27:33 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:27:33 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:27:56 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:27:56,120] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/berton/Desktop/360/project/gunicorn_demo/ADD_Services.py", line 23, in index
+    total_add = int(en)+int(zh)
+ValueError: invalid literal for int() with base 10: 'wo'
+[2018-07-31 16:27:56 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:27:57 +0800] [16324] [DEBUG] GET /
+[2018-07-31 16:27:57,971] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/berton/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/berton/Desktop/360/project/gunicorn_demo/ADD_Services.py", line 23, in index
+    total_add = int(en)+int(zh)
+ValueError: invalid literal for int() with base 10: 'wo'
+[2018-07-31 16:27:57 +0800] [16324] [DEBUG] Closing connection. 
+[2018-07-31 16:29:15 +0800] [16324] [INFO] Parent changed, shutting down: <Worker 16324>
+[2018-07-31 16:29:15 +0800] [16324] [INFO] Worker exiting (pid: 16324)
