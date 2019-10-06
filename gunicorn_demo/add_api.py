@@ -4,7 +4,6 @@
 """
 add_api.py
 2018/7/31 下午4:23 by berton
-i-yangzhibo@360.cn
 """
 import json
 import requests

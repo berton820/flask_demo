@@ -3,7 +3,6 @@
 
 from flask import Flask, request, jsonify
 
-
 app = Flask(__name__)
 
 
@@ -19,8 +18,7 @@ def index():
     if not en or not zh:
         return jsonify({'succ': 'error'})
 
-
-    total_add = int(en)+int(zh)
+    total_add = int(en) + int(zh)
     context = {
         'en': en,
         'zh': zh,
@@ -28,7 +26,9 @@ def index():
         'succ': 'ok'
     }
     return jsonify(context)
-#    return (111) 
+
+
+#    return (111)
 
 
 if __name__ == '__main__':
